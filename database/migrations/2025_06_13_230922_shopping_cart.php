@@ -13,6 +13,8 @@ return new class extends Migration {
         Schema::create('shopping_carts', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger(column: 'product_id');
+            $table->unsignedInteger(column: 'quantity');
+            $table->timestamps();
 
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });

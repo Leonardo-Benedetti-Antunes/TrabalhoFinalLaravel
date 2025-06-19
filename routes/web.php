@@ -22,3 +22,6 @@ Route::get('/admin/product/{product}/delete', [AdminProductController::class, 'd
 
 //Rotas do carrinho
 Route::get('/shoppingcart', [ShoppingCartController::class, 'index'])->name('shopping_cart');
+Route::post('/shoppingcart/add', [ShoppingCartController::class, 'add'])->name('cart.add');
+Route::delete('/shoppingcart/remove/{id}', [ShoppingCartController::class, 'remove'])->name('cart.remove');
+Route::post('/shoppingcart/checkout', [ShoppingCartController::class, 'checkout'])->name('cart.checkout');
