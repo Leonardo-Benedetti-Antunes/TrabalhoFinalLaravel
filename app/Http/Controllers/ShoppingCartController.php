@@ -45,10 +45,16 @@ class ShoppingCartController extends Controller
         return redirect()->back()->with('success', 'Item removido do carrinho.');
     }
 
+    public function payment()
+    {
+
+        return redirect()->route('payment');
+    }
+
     public function checkout()
     {
         ShoppingCart::truncate();
 
-        return redirect()->route('shopping_cart')->with('success', 'Compra finalizada com sucesso! Seu carrinho foi esvaziado.');
+        return redirect()->route('home')->with('success', 'Pagamento confirmado com sucesso!');
     }
 }

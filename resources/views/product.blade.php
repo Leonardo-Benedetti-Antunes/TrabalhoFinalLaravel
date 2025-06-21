@@ -24,14 +24,18 @@
                     <div class="flex border-t-2 border-gray-100 mt-6 pt-6">
                         <span class="title-font font-medium text-2xl text-gray-900">R$: {{ $product->price }}</span>
                         <div class="flex ml-auto text-white">
-                            <form action="{{ route('cart.add') }}" method="POST">
-                                @csrf
-                                <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                <button type="submit"
-                                    class="bg-indigo-500 border-0 py-2 px-6 ml-5 focus:outline-none hover:bg-indigo-600 rounded">
-                                    Adicionar ao carrinho
-                                </button>
-                            </form>
+                            @if ($product->stock > 0)
+                                <form action="{{ route('cart.add') }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                    <button type="submit"
+                                        class="bg-indigo-500 border-0 py-2 px-6 ml-5 focus:outline-none hover:bg-indigo-600 rounded">
+                                        Adicionar ao carrinho
+                                    </button>
+                                </form>
+                            @else
+                                <span class="text-red-500 font-semibold ml-5">Produto indisponível</span>
+                            @endif
                         </div>
                     </div>
                 </div>

@@ -27,7 +27,7 @@
                 <button
                     class="mx-5 py-1 px-5 items-center bg-gray-100 focus:outline-none hover:bg-gray-200 rounded text-base md:mt-0">
                     <a href="{{ route('shopping_cart') }}">
-                        <img src="svg/shopping_cart.svg" alt="">
+                        <img src="{{ asset('svg/shopping_cart.svg') }}" alt="Carrinho">
                     </a>
                 </button>
                 <button
