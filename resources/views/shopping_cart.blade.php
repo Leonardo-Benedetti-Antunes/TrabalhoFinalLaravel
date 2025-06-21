@@ -51,7 +51,7 @@
             @endforeach
 
             <div class="text-right border-t pt-4 mt-6">
-                <form action="{{ route('cart.checkout') }}" method="POST">
+                <form action="{{ route('payment') }}" method="GET">
                     @csrf
                     <p class="text-2xl font-bold mb-4">
                         Total: R$
